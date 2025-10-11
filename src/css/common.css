@@ -1,0 +1,148 @@
+*,
+*:focus,
+*:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  outline: none;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/Manrope-Regular.woff2) format("woff2");
+  src: url(../fonts/Manrope-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Manrope-Medium.woff2) format("woff2");
+  src: url(../fonts/Manrope-Medium.woff) format("woff");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/Manrope-SemiBold.woff2) format("woff2");
+  src: url(../fonts/Manrope-SemiBold.woff) format("woff");
+}
+body {
+  background: #F8F8F8;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+body.locked {
+  overflow: hidden;
+}
+
+body,
+form,
+table {
+  font: normal normal 14px/18px "Manrope", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 115%;
+}
+
+h2 {
+  font-size: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #21211F;
+  outline: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+a:hover {
+  text-decoration: none;
+}
+
+button,
+iframe {
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  position: relative;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 577px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 16px 24px;
+  cursor: pointer;
+  border-radius: 100px;
+  background: #21211F;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
