@@ -1275,9 +1275,6 @@ label {
     height: 100%;
     left: 0;
     z-index: 1000;
-    padding: 134px 40px 40px;
-    overflow: auto;
-    transition: all 0.3s ease;
 
     .mobile_menu_bg {
         display: block;
@@ -1290,13 +1287,18 @@ label {
         height: 100%;
         background: rgba(33, 33, 31, 0.25);
         backdrop-filter: blur(4px);
-        transition: transform 0.3s ease;
+        opacity: 0;
     }
 
+    .list_wrapper {
+        overflow: auto;
+        height: 100%;
+        padding: 134px 40px 40px;
+
+    }
 
     .list {
         transform: translateY(-150%);
-        transition: transform 0.3s ease;
     }
 
     .item {
@@ -1405,9 +1407,17 @@ label {
         &.active {
             visibility: visible;
             pointer-events: all;
+            transition: all 0.3s ease;
+
+            .mobile_menu_bg {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+
+            }
 
             .list {
                 transform: translateY(0);
+                transition: transform 0.3s ease;
             }
 
             .bg img {
@@ -1859,8 +1869,11 @@ label {
     }
 
     .mobile_menu {
-        padding-left: 16px;
-        padding-right: 16px;
+
+        .list_wrapper {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
 
         .item {
             padding-left: 16px;
