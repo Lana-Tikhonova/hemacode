@@ -117,6 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).parent().hide();
     });
 
+    $('.form_input').on('change', function () {
+        $(this).closest('.form_GlassContainer').toggleClass('filled', this.value.trim() !== '');
+    });
+
+
 
 
 })
