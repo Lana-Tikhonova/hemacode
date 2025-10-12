@@ -605,7 +605,7 @@ label {
             border-radius: 100px;
             border: 1px solid #F3F3F3;
             background: rgba(255, 255, 255, 0.50);
-            padding: 16px 24px;
+            padding: 15px 24px;
 
             &:hover {
                 color: $colorBlack;
@@ -801,7 +801,7 @@ label {
     max-width: 798px;
     opacity: 0.1;
     top: 0;
-    right: 0;
+    right: 40px;
 }
 
 .about_block {
@@ -1009,16 +1009,23 @@ label {
         position: relative;
         display: flex;
 
-        img {
+        .img {
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             max-height: 481px;
             height: calc(100% + 32px);
-            object-fit: contain;
-            object-position: bottom;
+            width: 100%;
             max-width: 492px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: bottom;
+            }
         }
     }
 
@@ -1084,7 +1091,7 @@ label {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 1440px;
+    width: 1600px;
     max-width: initial;
 }
 
@@ -1206,7 +1213,7 @@ label {
 
 .footer_logo_text {
     margin-top: 60px;
-    margin-bottom: -2.5%;
+    margin-bottom: -2.6%;
 }
 
 .footer_bottom {
@@ -1245,6 +1252,18 @@ label {
             display: none;
         }
     }
+
+    &.active {
+        span {
+            &:first-child {
+                display: none;
+            }
+
+            &:last-child {
+                display: block;
+            }
+        }
+    }
 }
 
 .mobile_menu {
@@ -1272,9 +1291,16 @@ label {
         border-radius: 24px;
         background: #FFF;
         padding: 24px;
+        position: relative;
+        z-index: 1;
+
 
         &:not(:last-child) {
             margin-bottom: 24px;
+        }
+
+        &:first-child {
+            overflow: hidden;
         }
 
         &:nth-child(2) {
@@ -1294,6 +1320,35 @@ label {
 
             }
         }
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 450px;
+        height: 450px;
+
+        img {
+            transform-origin: center;
+            display: block;
+            position: absolute;
+            left: 12%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -1341,6 +1396,10 @@ label {
 
             .list {
                 transform: translateY(0);
+            }
+
+            .bg img {
+                animation: spin 20s linear infinite;
             }
         }
     }
@@ -1502,7 +1561,7 @@ label {
     .mission_block .right {
         height: 333px;
 
-        img {
+        .img {
             max-width: 394px;
         }
     }
@@ -1554,9 +1613,27 @@ label {
     .footer_bottom {
         padding: 32px 0 0;
     }
+
+    .footer_bg {
+        width: 1750px;
+    }
 }
 
 @media screen and (max-width:767px) {
+    .about_bg {
+        max-width: 100%;
+        width: calc(100% - 80px);
+    }
+
+    .mobile_menu .bg {
+        width: 300px;
+        height: 300px;
+
+        img {
+            left: 50%;
+        }
+    }
+
     .head_top {
         flex-direction: column;
         align-items: flex-start;
@@ -1590,7 +1667,7 @@ label {
         .right {
             width: 100%;
 
-            img {
+            .img {
                 height: 100%;
             }
         }
@@ -1614,6 +1691,11 @@ label {
 }
 
 @media screen and (max-width:575px) {
+    .about_bg {
+        width: calc(100% - 32px);
+        right: 16px;
+    }
+
     .head_title {
         h1 {
             font-size: clamp(50px, 17vw, 64px);
@@ -1783,7 +1865,13 @@ label {
         }
     }
 
-    .mission_block .right img {
+    .mission_block .right .img {
         max-width: 100%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .footer_bg {
+        width: 375px;
     }
 }
