@@ -854,10 +854,21 @@ label {
     max-width: 480px;
 }
 
+@media screen and (min-width:992px) {
+    .player_video_block {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-6px);
+        }
+    }
+}
+
 .player_video_block {
     position: relative;
     height: 0;
     padding-bottom: 50%;
+
 
     .plyr--video {
         background: transparent;
