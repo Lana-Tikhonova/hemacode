@@ -78,50 +78,51 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     });
 
-    // видео
-    const players = Array.from(document.querySelectorAll('.player_video')).map(
-        (p) =>
-            new Plyr(p, {
-                controls: [
-                    'play-large',
-                    'play',
-                    'progress',
-                    'current-time',
-                    'mute',
-                    'volume',
-                    'settings',
-                    // 'share',     
-                    // 'fullscreen', 
-                ],
-                autoplay: false,
-            })
-    );
+    // // видео
+    // const players = Array.from(document.querySelectorAll('.player_video')).map(
+    //     (p) =>
+    //         new Plyr(p, {
+    //             controls: [
+    //                 'play-large',
+    //                 'play',
+    //                 'progress',
+    //                 'current-time',
+    //                 'mute',
+    //                 'volume',
+    //                 'settings',
+    //                 // 'share',     
+    //                 // 'fullscreen', 
+    //             ],
+    //             autoplay: false,
+    //         })
+    // );
 
-    // останавливать видео, если включили другое
-    players.forEach(player => {
-        player.on('play', function () {
+    // // останавливать видео, если включили другое
+    // players.forEach(player => {
+    //     player.on('play', function () {
 
-            players.forEach(otherPlayer => {
-                if (otherPlayer !== player && !otherPlayer.paused) {
-                    otherPlayer.pause();
-                }
-            });
-        });
+    //         players.forEach(otherPlayer => {
+    //             if (otherPlayer !== player && !otherPlayer.paused) {
+    //                 otherPlayer.pause();
+    //             }
+    //         });
+    //     });
+    // });
+
+    // // запускать видео при клике на обложку
+    // $('.player_video_bg_btn').on('click', function (e) {
+    //     for (let index = 0; index < players.length; index++) {
+    //         players[index].play();
+    //     }
+    //     $(this).parent().hide();
+    // });
+
+    Fancybox.bind("[data-fancybox]");
+
+    $('.hidden_block_btn').on('click', function () {
+        $(this).closest('.hidden_block_wrapper').find(".hidden_block").slideToggle();
+        $(this).toggleClass('active');
     });
-
-    // запускать видео при клике на обложку
-    $('.player_video_bg_btn').on('click', function (e) {
-        for (let index = 0; index < players.length; index++) {
-            players[index].play();
-        }
-        $(this).parent().hide();
-    });
-
-    $('.form_input').on('change', function () {
-        $(this).closest('.form_GlassContainer').toggleClass('filled', this.value.trim() !== '');
-    });
-
-
 
 
 })
