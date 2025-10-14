@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).toggleClass('active');
         $('.mobile_menu').toggleClass('active');
         $('body').toggleClass('locked');
-        $('.btns_wrapper').toggleClass('hidden')
     });
 
 
@@ -43,6 +42,26 @@ document.addEventListener('DOMContentLoaded', () => {
             el: ".swiper-pagination",
             clickable: true,
         },
+    });
+
+
+    const swiperProcesses = new Swiper(".processes_slider", {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+        },
+        breakpoints: {
+            576: {
+                spaceBetween: 24,
+            },
+        }
     });
 
     // валидация телефона
