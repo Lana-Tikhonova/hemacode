@@ -287,7 +287,7 @@ ul {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.3s ease;
+        transition: all 0.3s ease;
 
         svg {
             color: $colorRed;
@@ -2542,5 +2542,120 @@ span.breadcrumb_item {
 
     .contacts_info_list {
         margin-bottom: 24px;
+    }
+}
+
+// 404
+.page-404_block {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 42px;
+    z-index: 1;
+    color: #fff;
+
+    .bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(33, 33, 31, 0.25);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+        }
+
+        img {
+            width: 1381px;
+            max-width: initial;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%) scaleX(-1);
+            object-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+    .btn_secondary {
+        span {
+            border: 1px solid #FFF;
+            background: transparent;
+
+        }
+
+        svg {
+            color: #fff;
+        }
+
+        &:hover {
+            span {
+                border-color: transparent;
+            }
+        }
+    }
+
+    .title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.72px;
+        text-align: center;
+    }
+
+    .text {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+.page-404_img {
+    max-width: 603px;
+}
+
+@media screen and (max-width:991px) {
+    .page-404_block {
+        padding-top: 82px;
+        padding-bottom: 82px;
+    }
+
+    .page-404_img {
+        max-width: 420px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .page-404_block {
+        padding: 38px 34px;
+    }
+
+    .page-404_img {
+        max-width: 87%;
+    }
+
+    .page-404_block .bg img {
+        width: 700px;
     }
 }
