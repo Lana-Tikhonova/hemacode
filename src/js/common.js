@@ -7,29 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    let founders = $(".founders_block")
-    const instance = founders.find('.content_body_scroll').overlayScrollbars({
-        className: "os-theme-dark",
-        scrollbars: {
-            clickScrolling: true,
-            visibility: "auto",
-        }
-    }).overlayScrollbars();
+    let founders = $(".founders_block");
+    if (founders.length) {
+        const instance = founders.find('.content_body_scroll').overlayScrollbars({
+            className: "os-theme-dark",
+            scrollbars: {
+                clickScrolling: true,
+                visibility: "auto",
+            }
+        }).overlayScrollbars();
 
-    const scrollEl = instance.getElements().viewport;
+        const scrollEl = instance.getElements().viewport;
 
-    // Отслеживаем событие прокрутки
-    scrollEl.addEventListener('scroll', () => {
-        const scrollTop = scrollEl.scrollTop;
-        const scrollHeight = scrollEl.scrollHeight;
-        const clientHeight = scrollEl.clientHeight;
+        // Отслеживаем событие прокрутки
+        scrollEl.addEventListener('scroll', () => {
+            const scrollTop = scrollEl.scrollTop;
+            const scrollHeight = scrollEl.scrollHeight;
+            const clientHeight = scrollEl.clientHeight;
 
-        if (scrollTop + clientHeight >= scrollHeight - 5) {
-            founders.addClass('end_scroll')
-        } else {
-            founders.removeClass('end_scroll');
-        }
-    });
+            if (scrollTop + clientHeight >= scrollHeight - 5) {
+                founders.addClass('end_scroll')
+            } else {
+                founders.removeClass('end_scroll');
+            }
+        });
+    }
 
 
     AOS.init({
