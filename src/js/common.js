@@ -53,9 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
         watchOverflow: true,
         watchSlidesVisibility: true,
         speed: 1000,
-        pagination: {
-            el: ".swiper-pagination",
-            type: "progressbar",
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     type: "progressbar",
+        // },
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
         },
         breakpoints: {
             576: {
@@ -142,6 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).closest('.hidden_block_wrapper').find(".hidden_block").slideToggle();
         $(this).toggleClass('active');
     });
+
+    // $(".information_block_scroll").overlayScrollbars({
+    //     className: "os-theme-dark",
+    //     // paddingAbsolute: true,
+    //     scrollbars: {
+    //         clickScrolling: true,
+    //         visibility: "auto",
+    //     }
+    // });
 
 
 })
