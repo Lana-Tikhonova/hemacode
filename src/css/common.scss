@@ -2625,6 +2625,9 @@ span.breadcrumb_item {
     }
 
     .btn_secondary {
+        background: hsla(0, 0%, 100%, .3);
+        border: 1px solid hsla(0, 0%, 100%, .25);
+
         span {
             border: 1px solid #FFF;
             background: transparent;
@@ -2636,9 +2639,16 @@ span.breadcrumb_item {
         }
 
         &:hover {
+            background: $colorRedHover;
+
             span {
                 border-color: transparent;
             }
+        }
+
+        &:focus,
+        &:active {
+            background: $colorBlack;
         }
     }
 
