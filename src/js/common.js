@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    $(".information_block_scroll").overlayScrollbars({
+        className: "os-theme-dark",
+        // paddingAbsolute: true,
+        scrollbars: {
+            clickScrolling: true,
+            visibility: "auto",
+        }
+    });
     AOS.init({
         easing: 'ease-in-out',
         delay: 100,
@@ -147,14 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).toggleClass('active');
     });
 
-    // $(".information_block_scroll").overlayScrollbars({
-    //     className: "os-theme-dark",
-    //     // paddingAbsolute: true,
-    //     scrollbars: {
-    //         clickScrolling: true,
-    //         visibility: "auto",
-    //     }
-    // });
 
 
 })
