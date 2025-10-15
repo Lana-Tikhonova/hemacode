@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollEl = instance.getElements().viewport;
 
-        // Отслеживаем событие прокрутки
         scrollEl.addEventListener('scroll', () => {
             const scrollTop = scrollEl.scrollTop;
             const scrollHeight = scrollEl.scrollHeight;
