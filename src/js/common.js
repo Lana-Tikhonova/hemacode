@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     $(".information_block_scroll").overlayScrollbars({
         className: "os-theme-dark",
-        // paddingAbsolute: true,
         scrollbars: {
             clickScrolling: true,
             visibility: "auto",
         }
     });
+
+    $(".founders_block .content_body_scroll").overlayScrollbars({
+        className: "os-theme-dark",
+        scrollbars: {
+            clickScrolling: true,
+            visibility: "auto",
+        }
+    });
+
     AOS.init({
         easing: 'ease-in-out',
         delay: 100,
@@ -154,6 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         $(this).closest('.hidden_block_wrapper').find(".hidden_block").slideToggle();
         $(this).toggleClass('active');
     });
+
+
+    document.querySelectorAll(".chart_item path").forEach(path => {
+        path.addEventListener("mouseenter", () => {
+            path.parentNode.appendChild(path);
+        });
+    });
+
 
 
 
