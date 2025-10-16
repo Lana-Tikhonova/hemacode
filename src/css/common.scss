@@ -3047,59 +3047,6 @@ span.breadcrumb_item {
     border: 1px solid #F3F3F3;
     background: linear-gradient(270deg, rgba(223, 223, 223, 0.25) 0%, rgba(195, 195, 195, 0.25) 21.19%, rgba(223, 223, 223, 0.25) 100%);
 
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-
-        li {
-            width: calc(50% - 4px);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 0;
-
-            &:nth-child(1) {
-                span {
-                    background: $colorRed;
-                }
-            }
-
-            &:nth-child(2) {
-                span {
-                    background: #D28986;
-                }
-            }
-
-            &:nth-child(3) {
-                span {
-                    background: #934040;
-                }
-            }
-
-            &:nth-child(4) {
-                span {
-                    background: #310000;
-                }
-            }
-
-            h5 {
-                font-weight: 500;
-                letter-spacing: -0.6px;
-
-                &:last-child {
-                    font-weight: 600;
-                }
-            }
-
-            span {
-                width: 23px;
-                height: 23px;
-                display: block;
-            }
-        }
-    }
-
     h3 {
         letter-spacing: -0.84px;
     }
@@ -3107,6 +3054,68 @@ span.breadcrumb_item {
     .text {
         letter-spacing: -0.54px;
         font-size: 18px;
+    }
+}
+
+.chart_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    li {
+        width: calc(50% - 4px);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+
+        &.active {
+            span {
+                transform: scale(1.1);
+                transform-origin: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 4px;
+            }
+        }
+
+        &:nth-child(1) {
+            span {
+                background: $colorRed;
+            }
+        }
+
+        &:nth-child(2) {
+            span {
+                background: #D28986;
+            }
+        }
+
+        &:nth-child(3) {
+            span {
+                background: #934040;
+            }
+        }
+
+        &:nth-child(4) {
+            span {
+                background: #310000;
+            }
+        }
+
+        h5 {
+            font-weight: 500;
+            letter-spacing: -0.6px;
+
+            &:last-child {
+                font-weight: 600;
+            }
+        }
+
+        span {
+            width: 23px;
+            height: 23px;
+            display: block;
+            transition: all 0.3s ease;
+        }
     }
 }
 

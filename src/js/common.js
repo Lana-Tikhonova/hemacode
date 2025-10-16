@@ -182,12 +182,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // document.querySelectorAll(".chart_item path").forEach(path => {
+    //     path.addEventListener("mouseenter", () => {
+    //         path.parentNode.appendChild(path);
+    //     });
+    // });
+
     document.querySelectorAll(".chart_item path").forEach(path => {
+        const id = path.id;
+
+        // при наведении на сектор
         path.addEventListener("mouseenter", () => {
+            // поднимаем сектор наверх
             path.parentNode.appendChild(path);
+            // находим связанный пункт
+            const li = document.querySelector(`[data-chart="${id}"]`);
+            li?.classList.add("active");
+        });
+
+        path.addEventListener("mouseleave", () => {
+            const li = document.querySelector(`[data-chart="${id}"]`);
+            li?.classList.remove("active");
         });
     });
 
+    // при наведении на элемент списка
+    document.querySelectorAll(".chart_list li").forEach(li => {
+        const chartId = li.dataset.chart;
+        const path = document.getElementById(chartId);
+
+        li.addEventListener("mouseenter", () => {
+            li.classList.add("active");
+            path?.parentNode.appendChild(path);
+            path?.classList.add("active");
+        });
+
+        li.addEventListener("mouseleave", () => {
+            li.classList.remove("active");
+            path?.classList.remove("active");
+        });
+    });
+
+    tippy('[data-tippy-content]', {
+        followCursor: true,
+        arrow: false
+    });
 
 
 

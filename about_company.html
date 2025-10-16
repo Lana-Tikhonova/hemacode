@@ -23,12 +23,12 @@
 
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="vendors/plyr/plyr.css" />
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="vendors/bootstrap/bootstrap-grid-additional.css" />
     <link rel="stylesheet" href="vendors/fancybox/fancybox.css" />
     <link rel="stylesheet" href="vendors/overlayScrollbars/OverlayScrollbars.min.css" />
-    <link rel="stylesheet" href="assets/css/bundle.min.css?8" />
+    <link rel="stylesheet" href="vendors/tippy/scale.css" />
+    <link rel="stylesheet" href="assets/css/bundle.min.css?9" />
     <script></script>
 </head>
 
@@ -336,23 +336,23 @@
                     <div class="left">
                         <div class="chart_block" data-aos="fade-up">
                             <h3 class='mb-4 mb-lg-6'>Объем трансфузий в мире</h3>
-                            <ul class='mb-4 mb-lg-6'>
-                                <li>
+                            <ul class='mb-4 mb-lg-6 chart_list'>
+                                <li data-chart="chart_oncohematology">
                                     <span></span>
                                     <h5>Онкогематология</h5>
                                     <h5>60%</h5>
                                 </li>
-                                <li>
+                                <li data-chart="chart_other">
                                     <span></span>
                                     <h5>Другие</h5>
                                     <h5>34%</h5>
                                 </li>
-                                <li>
+                                <li data-chart="chart_cardiac">
                                     <span></span>
                                     <h5>Кардиохирургия</h5>
                                     <h5>11%</h5>
                                 </li>
-                                <li>
+                                <li data-chart="chart_injuries">
                                     <span></span>
                                     <h5>Травмы и кровотечения</h5>
                                     <h5>2%</h5>
@@ -364,16 +364,16 @@
                     <div class="right" data-aos="zoom-in">
                         <svg class='chart_item' width="284" height="284" viewBox="0 0 284 284" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            <path class=''
+                            <path id="chart_cardiac" data-tippy-content="Кардиохирургия"
                                 d="M152.692 283.597C122.769 285.856 92.8986 278.578 67.3688 262.806L142 142L152.692 283.597Z"
                                 fill="#934040" />
-                            <path
+                            <path id="chart_injuries" data-tippy-content="Травмы и кровотечения"
                                 d="M67.3862 262.817C58.0234 257.035 49.3645 250.184 41.5838 242.402L142 142L67.3862 262.817Z"
                                 fill="#310000" />
-                            <path
+                            <path id="chart_other" data-tippy-content="Другие"
                                 d="M281.744 116.79C285.274 136.355 284.656 156.444 279.93 175.756C275.203 195.067 266.475 213.171 254.309 228.895C242.143 244.619 226.81 257.614 209.304 267.037C191.798 276.46 172.508 282.102 152.683 283.598L142 142L281.744 116.79Z"
                                 fill="#D28A86" />
-                            <path
+                            <path id="chart_oncohematology" data-tippy-content="Онкогематология"
                                 d="M41.5908 242.409C25.8359 226.654 14.0094 207.413 7.06766 186.241C0.12591 165.069 -1.7363 142.561 1.63159 120.536C4.99949 98.5109 13.503 77.5877 26.4545 59.4577C39.406 41.3277 56.4421 26.4999 76.1853 16.173C95.9285 5.8462 117.825 0.310207 140.104 0.0126624C162.383 -0.284882 184.419 4.66437 204.431 14.4602C224.443 24.2561 241.869 38.6237 255.3 56.4013C268.731 74.179 277.79 94.8677 281.745 116.795L142 142L41.5908 242.409Z"
                                 fill="#DC2017" />
                         </svg>
@@ -642,7 +642,9 @@
     <script src="vendors/imask/imask.js"></script>
     <script src="vendors/fancybox/fancybox.umd.js"></script>
     <script src="vendors/overlayScrollbars/jquery.overlayScrollbars.min.js"></script>
-    <script src="src/js/common.js?8"></script>
+    <script src="vendors/tippy/popper.min.js"></script>
+    <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
+    <script src="src/js/common.js?9"></script>
 </body>
 
 </html>
