@@ -182,12 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // document.querySelectorAll(".chart_item path").forEach(path => {
-    //     path.addEventListener("mouseenter", () => {
-    //         path.parentNode.appendChild(path);
-    //     });
-    // });
-
     document.querySelectorAll(".chart_item path").forEach(path => {
         const id = path.id;
 
@@ -203,23 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
         path.addEventListener("mouseleave", () => {
             const li = document.querySelector(`[data-chart="${id}"]`);
             li?.classList.remove("active");
-        });
-    });
-
-    // при наведении на элемент списка
-    document.querySelectorAll(".chart_list li").forEach(li => {
-        const chartId = li.dataset.chart;
-        const path = document.getElementById(chartId);
-
-        li.addEventListener("mouseenter", () => {
-            li.classList.add("active");
-            path?.parentNode.appendChild(path);
-            path?.classList.add("active");
-        });
-
-        li.addEventListener("mouseleave", () => {
-            li.classList.remove("active");
-            path?.classList.remove("active");
         });
     });
 
