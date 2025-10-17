@@ -531,7 +531,7 @@ hr {
 label {
     &.error {
         font-size: 13px;
-        color: red;
+        color: #f3d0cf;
         margin-top: 2px;
     }
 }
@@ -1206,6 +1206,11 @@ label {
 
     .hidden_block_btn {
         font-size: 14px;
+        color: hsla(0, 0%, 100%, .8);
+
+        &.active span {
+            opacity: 1;
+        }
     }
 }
 
@@ -1559,6 +1564,7 @@ label {
     cursor: pointer;
     padding: 10px;
     width: 100%;
+    color: $colorBlack;
 
     span {
         &:last-child {
@@ -1568,6 +1574,8 @@ label {
 
     &.active {
         span {
+            opacity: 0.5;
+
             &:first-child {
                 display: none;
             }
@@ -2803,6 +2811,16 @@ span.breadcrumb_item {
 .information_table {
     padding: 24px 26px 32px;
 
+    &.aos-animate {
+        .line_one {
+            width: 360px;
+        }
+
+        .line_two {
+            width: 81px;
+        }
+    }
+
     .tr {
         display: flex;
         padding: 8px 0;
@@ -2896,18 +2914,12 @@ span.breadcrumb_item {
 
     .line {
         border-radius: 25px;
-        width: 100%;
+        width: 0;
         height: 30px;
+        transition: all 1s ease 0.5s;
         background: linear-gradient(270deg, #D61C2E 0%, #DC4C17 100%);
     }
 
-    .line_one {
-        width: 360px;
-    }
-
-    .line_two {
-        width: 81px;
-    }
 }
 
 @media screen and (min-width: 576px) and (max-width: 1199px) {

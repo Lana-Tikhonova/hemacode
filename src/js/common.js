@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             rules: {
                 agree: "required",
-                phone: {
+                tel: {
                     required: true,
                     phoneRU: true
                 }
